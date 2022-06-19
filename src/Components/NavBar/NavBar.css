@@ -23,7 +23,18 @@ nav .links a {
   text-decoration: none;
 }
 
-nav #logo, nav #carrito {
+nav #logo {
   place-self: center;
+}
+
+nav button {
+  place-self: center;
+  max-height: 50px;
+  max-width: 50px;
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
 }
 /*# sourceMappingURL=NavBar.css.map */

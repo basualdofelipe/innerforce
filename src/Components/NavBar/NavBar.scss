@@ -12,7 +12,18 @@ nav{
         text-decoration: none;
         }
     }
-    #logo, #carrito{
+    #logo{
         place-self: center;
+    }
+    button{
+        place-self: center;
+        max-height: 50px;
+        max-width: 50px; 
+        background-color: Transparent;
+        background-repeat:no-repeat;
+        border: none;
+        cursor:pointer;
+        overflow: hidden;        
+        
     }
 }

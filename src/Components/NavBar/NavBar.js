@@ -1,7 +1,23 @@
 import React from "react";
-import logo from "../../assets/logo2.png"
-import carrito from "../../assets/shopping_cart.svg";
+import logo from "../../assets/logo2.png";
 import './NavBar.css';
+import CartWidget from "../CartWidget/CartWidget";
+
+
+const menuItems = [
+  {
+    id: 1,
+    lable: "Fechas"
+  },
+  {
+    id: 2,
+    lable: "Discos"
+  },
+  {
+    id: 3,
+    lable: "Remeras"
+  }
+]
 
 const NavBar = () => {
     return(
@@ -9,11 +25,13 @@ const NavBar = () => {
       <nav>
         <img id="logo" src={logo} alt="" />
         <div class="links">
-          <a href="/#">Fechas</a>
-          <a href="/#">Discos</a>
-          <a href="/#">Remeras</a>
+          {menuItems.map((items)=>(
+            <a href="/" key={items.id}>
+              {items.lable}
+            </a>
+          ))}
         </div>
-        <img id="carrito" src={carrito} alt="" />
+        <CartWidget/>
       </nav>
       </>
     )

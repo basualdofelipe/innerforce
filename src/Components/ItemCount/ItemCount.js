@@ -1,22 +1,18 @@
 import React,{useState} from 'react';
 import './ItemCount.scss';
 
-const ItemCount = ({stock}) => {
-      const [contador, setContador] = useState(1);
+const ItemCount = ({stock, initial, onAdd}) => {
+      const [contador, setContador] = useState(initial);
       
 
       const sumar = () => {
-            contador<stock
-            ? setContador(contador + 1)
-            : setContador(contador)
+            setContador(contador+1)
       }
       const restar = () => {
-            contador>0
-            ? setContador(contador - 1)
-            : setContador(contador)
+            setContador(contador-1)
       }
       const clear = () => {
-            setContador(0);
+            setContador(initial);
       }
 
             return(
@@ -24,10 +20,10 @@ const ItemCount = ({stock}) => {
                   <div className="item">
                         <h1>{contador}/{stock}</h1>
                         <div className="buttons">
-                              <button id='suma' onClick={sumar}>+</button>
-                              <button id='reset' onClick={clear}>0</button>
-                              <button id='resta' onClick={restar}>-</button>
-                              <button id='carrito'>Agregar al Carrito</button>
+                              <button disabled={contador >= stock} id='suma' onClick={sumar}>+</button>
+                              <button id='reset' onClick={clear}>Reset</button>
+                              <button disabled={contador <= 1} id='resta' onClick={restar}>-</button>
+                              <button disabled={stock<=0} onClick={() => onAdd(contador)} id='carrito'>Agregar al Carrito</button>
                         </div>
                   </div>
             </>

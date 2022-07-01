@@ -1,24 +1,38 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import './ItemListContainer.scss'
 import ItemCount from "../ItemCount/ItemCount";
+import ItemList from "../ItemList/ItemList"
+
+let products = {}
+
+fetch('https://fakestoreapi.com/products')
+            .then(res=>res.json())
+            .then(json=>{products = json})
 
 
 const ItemListContainer = ({greeting}) => {
+
+  const [data, setData] = useState([])
+
+  useEffect(() => {
+    const getData = new Promise(resolve => {
+      setTimeout(() => {
+        resolve(products)
+      }, 4000);
+    });
+    getData.then(res => setData(res))
+
+  }, [])
 
   const onAdd = (quantity) => {
     console.log(`Agregado ${quantity} items al carrito`)    
   }
 
+
     return(
           <>
-          <h1>{greeting}</h1>
           <div className="items">
-            <ItemCount initial={1} stock={10} onAdd = {onAdd} />
-            <ItemCount initial={2} stock={15} onAdd = {onAdd} />
-            <ItemCount initial={1} stock={0} onAdd = {onAdd} />
-            <ItemCount initial={5} stock={45} onAdd = {onAdd} />
-            <ItemCount initial={1} stock={8} onAdd = {onAdd} />
-            <ItemCount initial={8} stock={255} onAdd = {onAdd} />
+            <ItemList data={data}/>
           </div>
           </>
       )

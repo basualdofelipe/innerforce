@@ -1,0 +1,31 @@
+.itemcontainer{
+    background-color: #ffffff;
+    margin: 5%;
+    box-shadow: 0 0 4px 4px (rgba(0, 0, 0, 0.1));
+    border-radius: .5rem;
+    display: grid;
+
+    grid-template-columns: 2fr 1fr;
+
+    img{
+        width: 60%;
+        place-self: center;
+        margin: 2%;
+    }
+
+    .data{
+        background-color: #3333332e;
+        box-shadow: 0 0 4px 4px (rgba(0, 0, 0, 0.5));
+        margin: 4%;
+        padding: 2%;
+        border-radius: 1rem;
+        #price{
+            font-size: 2rem;
+            padding: 1rem;
+        }
+        #description{
+            font-size: 1.5rem;
+            padding: 4rem 1rem 0 1rem;
+        }
+    }
+}

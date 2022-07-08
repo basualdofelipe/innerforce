@@ -15,15 +15,16 @@ nav{
     #logo{
         place-self: center;
     }
-    button{
+    #cart{
         place-self: center;
-        max-height: 50px;
-        max-width: 50px; 
-        background-color: Transparent;
-        background-repeat:no-repeat;
-        border: none;
-        cursor:pointer;
-        overflow: hidden;        
-        
+        button{
+            max-height: 50px;
+            max-width: 50px; 
+            background-color: Transparent;
+            background-repeat:no-repeat;
+            border: none;
+            cursor:pointer;
+            overflow: hidden;        
+        }
     }
 }

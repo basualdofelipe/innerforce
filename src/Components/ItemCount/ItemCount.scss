@@ -1,29 +1,39 @@
 .item{
     display: flex;
     flex-direction: column;
-    width: 150px;
-    box-shadow: 0 0 2px 1px (#ffffff);
+    width: inherit;
+    align-items: start;
+    margin: 1rem;
     h1{
         align-self: center;
-        color: #ffffff;
+        color: #000000;
     }
 }
 
 
 
-
-.buttons{
-    display: flex;
-    flex-wrap: wrap;
-    width: inherit;
-    button{
-        border: none;
-        font: inherit;
-        cursor: pointer;
-        outline: inherit;
-        width: 50px;
+#stock{
+    display: grid;
+    grid-template-columns: 1fr .3fr;
+    grid-template-rows: 1fr 1fr;
+    align-content: stretch;
+    p{
+        grid-row: 1 / span 2;
+        margin: 1rem;
+        padding: .5rem;
     }
 }
+
+button{
+    border: none;
+    font: inherit;
+    cursor: pointer;
+    outline: inherit;
+    width: 50px;
+    margin: .3rem;
+    border-radius: 1mm;
+}
+
 
 #carrito{
     border: none;
@@ -31,15 +41,17 @@
     cursor: pointer;
     outline: inherit;
     width: 150px;
+    padding: .8rem;
     background-color: #5c95db;
+    align-self: center;
 }
 
 
 
 #suma{
-    background-color: #5CDB5C;
+    background-color: #5cdb5c7a;
 }
 #resta{
-    background-color: #FF0021;
+    background-color: #FF00217a;
 }
 

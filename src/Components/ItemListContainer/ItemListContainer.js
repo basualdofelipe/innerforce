@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from "react";
 import './ItemListContainer.scss'
-import ItemCount from "../ItemCount/ItemCount";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
 
@@ -31,9 +30,7 @@ const ItemListContainer = ({greeting}) => {
 
   }, [id])
 
-  const onAdd = (quantity) => {
-    console.log(`Agregado ${quantity} items al carrito`)    
-  }
+ 
 
 
     return(

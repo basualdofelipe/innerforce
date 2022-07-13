@@ -19,6 +19,9 @@
         margin: 4%;
         padding: 2%;
         border-radius: 1rem;
+        display: flex;
+        flex-direction: column;
+        width: inherit;
         #price{
             font-size: 2rem;
             padding: 1rem;
@@ -26,6 +29,15 @@
         #description{
             font-size: 1.5rem;
             padding: 4rem 1rem 0 1rem;
+        }
+        #go-to-cart{
+            border: none;
+            font: inherit;
+            cursor: pointer;
+            outline: inherit;
+            width: 150px;
+            padding: .8rem;
+            background-color: #5c95db;
         }
     }
 }

@@ -1,8 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { Link } from 'react-router-dom';
 import './Item.scss'
 
+
 const Item = ({id, title, price, category, description, image}) => {
+
     return(
         
         <Link to={`/item/${id}`} className="product">

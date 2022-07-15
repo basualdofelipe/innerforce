@@ -1,6 +1,5 @@
 
 import './App.css';
-import React, { createContext } from "react";
 import NavBar from './Components/NavBar/NavBar';
 import ItemListContainer from "./Components/ItemListContainer/ItemListContainer";
 import ItemDetailContainer from './Components/ItemDetailContainer/ItemDetailContainer';

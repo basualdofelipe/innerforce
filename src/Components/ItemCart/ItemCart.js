@@ -4,7 +4,6 @@ import { useCartContext } from '../../context/CartContext';
 
 const ItemCart = ({ item }) => {
     const { removeItem } = useCartContext();
-    console.log(item.id)
     return (
         <div className="itemCart">
             <img src={item.image} alt="" />

@@ -4,6 +4,7 @@ import './index.css';
 import App from './App';
 //import Header from "./Components/NavBar/NavBar"
 import reportWebVitals from './reportWebVitals';
+import './firebase/config'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

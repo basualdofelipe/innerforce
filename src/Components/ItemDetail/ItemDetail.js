@@ -23,7 +23,7 @@ const ItemDetail = ({item}) => {
                 {
                     toCart
                     ? <Link to='/cart'><button id='go-to-cart'>Ir al carrito</button></Link>
-                    : <ItemCount stock={5} initial={1} onAdd={onAdd} />
+                    : <ItemCount stock={item.stock} initial={1} onAdd={onAdd} />
                 }
             </div>
         </div>

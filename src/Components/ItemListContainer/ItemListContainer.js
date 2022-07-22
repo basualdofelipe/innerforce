@@ -1,13 +1,8 @@
 import React, {useEffect, useState} from "react";
+import {getFirestore, collection, getDocs, query, where} from 'firebase/firestore'
 import './ItemListContainer.scss'
 import ItemList from "../ItemList/ItemList";
 import { useParams } from 'react-router-dom';
-
-let products = {}
-
-fetch("https://fakestoreapi.com/products")
-            .then(res=>res.json())
-            .then(json=>{products = json})
 
 
 const ItemListContainer = ({greeting}) => {
@@ -17,15 +12,19 @@ const ItemListContainer = ({greeting}) => {
   const {id} = useParams();
 
   useEffect(() => {
-    const getData = new Promise(resolve => {
-      setTimeout(() => {
-        resolve(products)
-      }, 1000);
-    });
+
+    const querydb = getFirestore();
+    const queryCollection = collection(querydb, 'productos');
+    
     if(id){
-      getData.then(res => setData(res.filter(item => item.category === id)))
+      const queryFilter = query(queryCollection, where('category', '==', id))
+      getDocs(queryFilter)
+      .then(res => res.docs.map(item => ({id: item.id, ...item.data()})))
+      .then(items => setData(items))      
     } else { 
-      getData.then(res => setData(res))
+      getDocs(queryCollection)
+      .then(res => res.docs.map(item => ({id: item.id, ...item.data()})))
+      .then(items => setData(items))
     }
 
   }, [id])

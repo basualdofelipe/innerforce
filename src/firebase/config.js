@@ -1,10 +1,9 @@
 
 import { initializeApp } from "firebase/app";
 
-
 const firebaseConfig = {
   /*
-  INSERTAR KEY ACÁ
+  Insertar Key
   */
 };
 
